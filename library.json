@@ -1,0 +1,25 @@
+{
+  "name": "OTAUpdate",
+  "version": "1.0.0",
+  "description": "Direct stream based OTA updater. Implements a simple OTA updater based or any stream connection. Also provides a TCP server implementation.",
+  "keywords": "ota",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/Tirus42/OTAUpdate.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Tirus",
+      "maintainer": true
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/Tirus42/OTAUpdate",
+  "dependencies": {
+	"Update": "~2"
+  },
+  "frameworks": "arduino",
+  "platforms": ["espressif32", "esp32"]
+}
