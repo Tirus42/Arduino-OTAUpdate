@@ -19,7 +19,7 @@ void TCPOTAUpdate::update(uint32_t currentTime) {
 }
 
 void TCPOTAUpdate::acceptNewClients(uint32_t currentTime) {
-    while(WiFiClient newClient = tcpServer.available()) {
+    while (WiFiClient newClient = tcpServer.accept()) {
         Serial.println("New OTA update client\n");
         clients.push_back(ClientHandle(newClient, currentTime));
     }
