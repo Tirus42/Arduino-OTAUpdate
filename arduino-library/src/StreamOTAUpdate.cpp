@@ -2,6 +2,8 @@
 
 #include <Update.h>
 
+#include <inttypes.h>
+
 StreamOTAUpdate::StreamOTAUpdate(Stream& stream, uint32_t imageSize, Print* optErrorOutputStream) :
     optErrorOutputStream(optErrorOutputStream) {
 
@@ -13,10 +15,10 @@ StreamOTAUpdate::StreamOTAUpdate(Stream& stream, uint32_t imageSize, Print* optE
     uint32_t bytesWritten = Update.writeStream(stream);
 
     if (bytesWritten != imageSize) {
-        Serial.printf("OTA update error, stream ended after %u bytes but %u expected\n", bytesWritten, imageSize);
+        Serial.printf("OTA update error, stream ended after %" PRIu32 " bytes but %" PRIu32 " expected\n", bytesWritten, imageSize);
 
         if (optErrorOutputStream) {
-            optErrorOutputStream->printf("OTA update error, stream ended after %u bytes but %u expected\n", bytesWritten, imageSize);
+            optErrorOutputStream->printf("OTA update error, stream ended after %" PRIu32 " bytes but %" PRIu32 " expected\n", bytesWritten, imageSize);
         }
 
         Update.abort();

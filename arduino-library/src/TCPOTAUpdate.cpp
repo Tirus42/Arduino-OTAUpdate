@@ -53,7 +53,7 @@ bool TCPOTAUpdate::updateClient(ClientHandle& client, uint32_t currentTime) {
     uint32_t updateSize;
     memcpy(&updateSize, headerBytes, sizeof(updateSize));
 
-    Serial.printf("Received OTA header, update has %u bytes\n", updateSize);
+    Serial.printf("Received OTA header, update has %" PRIu32 " bytes\n", updateSize);
 
     client.hnd.setTimeout(10000);	// Set large timeout to avoid read() problems over weak WiFi
 

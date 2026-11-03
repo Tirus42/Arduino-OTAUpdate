@@ -1,6 +1,6 @@
 {
   "name": "OTAUpdate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Direct stream based OTA updater. Implements a simple OTA updater based or any stream connection. Also provides a TCP server implementation.",
   "keywords": "ota",
   "repository":
